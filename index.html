@@ -16,11 +16,12 @@
   <div class="wrap">
     <a class="brand" href="./">Insoo Chung</a>
     <ul>
-      <li><a class="link" href="#work">Work</a></li>
       <li class="opt"><a class="link" href="#publications">Publications</a></li>
       <li class="opt"><a class="link" href="#experience">Experience</a></li>
       <li class="opt"><a class="link" href="#education">Education</a></li>
+      <li><a class="link" href="#work">Work</a></li>
       <li><a class="link" href="#contact">Contact</a></li>
+      <li><a class="link" href="cv/Insoo_Chung_CV.pdf">CV</a></li>
     </ul>
   </div>
 </nav>
@@ -30,22 +31,127 @@
   <section class="hero">
     <div>
       <p class="eyebrow">AI Research Scientist · AIRS Medical · Seoul</p>
-      <h1>I build models that hold up <em>off-benchmark</em>, and the evaluations that prove it.</h1>
-      <p class="lede">I own models end to end, from data and labels through architecture and training to evaluation and release. What I care about most is the gap between a held-out score and real-world behaviour: distribution shift, long tails, and whether a model gives the same answer twice.</p>
+      <h1>I build AI models end to end, from the <em>first label</em> to the shipped product.</h1>
+      <ul class="bio">
+        <li>I love speedrunning to production: smart model architectures, label-generation strategies, and evaluations that hold up.</li>
+        <li>I like finding out <em>why</em> a model fails, from gradients that cancel each other out to metrics that reward the wrong model.</li>
+        <li>What I care about most is the gap between a held-out score and real-world behaviour: distribution shift, long tails, and whether a model stays consistent when the input changes but the truth doesn't.</li>
+      </ul>
       <div class="chips">
         <span class="chip"><b>CVPR 2026</b> · DiffBMP</span>
         <span class="chip"><b>RSNA 2026</b> · first author</span>
         <span class="chip"><b>Production models</b> · brain MRI, spine MRI</span>
       </div>
+      <p class="cta-row"><a class="btn" href="cv/Insoo_Chung_CV.pdf">View CV (PDF)</a> <a class="btn ghost" href="mailto:insoo_chung@snu.ac.kr">Email me</a></p>
     </div>
     <figure>
       <img src="assets/img/profile.jpg" alt="Insoo Chung presenting at a podium" width="800" height="533">
     </figure>
   </section>
 
+  <section id="publications">
+    <div class="section-head"><h2>Publications</h2></div>
+    <ul class="list">
+      <li>
+        <span class="when">CVPR 2026</span>
+        <div class="what">
+          <b>DiffBMP: Differentiable Rendering with Bitmap Primitives</b>
+          <p>Seongmin Hong*, Junghun James Kim*, Daehyeop Kim, <b>Insoo Chung</b>, Se Young Chun.
+          <a href="https://arxiv.org/abs/2602.22625">arXiv</a> · <a href="https://diffbmp.com/">project</a> · <a href="https://github.com/smhongok/diffbmp">code</a></p>
+        </div>
+      </li>
+      <li>
+        <span class="when">RSNA 2026</span>
+        <div class="what">
+          <b>Native-Space Deep Learning for Reproducible Diffusion MRI Biomarkers of Cognitive Impairment without Spatial Normalization</b>
+          <p><b>Insoo Chung</b>, Woojin Jung, Jung Hoon Lee. Scientific presentation.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <div class="section-head"><h2>Experience</h2></div>
+    <ul class="list">
+      <li>
+        <span class="when">Jun 2025 – now</span>
+        <div class="what"><b>AI Research Scientist</b>, <a href="https://airsmed.com/">AIRS Medical</a>
+          <p>Brain DTI, lumbar spine and brain volumetry models: data, labels, architecture, training, evaluation and release.</p></div>
+      </li>
+      <li>
+        <span class="when">Jun – Sep 2025</span>
+        <div class="what"><b>Research Intern</b>, <a href="https://icl.snu.ac.kr/">Intelligent Computational Imaging Lab</a>, Seoul National University
+          <p>DiffBMP (CVPR 2026): dynamic / video optimization, structure-aware initialization, gradient-collision analysis.</p></div>
+      </li>
+      <li>
+        <span class="when">Jul – Aug 2024</span>
+        <div class="what"><b>Corporate Intern</b>, <a href="https://fmtc.snu.ac.kr/">SNU Future Mobility Technology Center</a>, Gyeonggi-do
+          <p>Real-time ROS perception nodes fusing LiDAR and camera data for autonomous driving.</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h2>Education</h2></div>
+    <ul class="list">
+      <li>
+        <span class="when">2023 – 2029 (exp.)</span>
+        <div class="what"><b>B.S. Electrical and Computer Engineering</b>, Seoul National University
+          <p>Major (ECE) GPA <b>4.02 / 4.3</b> · Cumulative GPA 3.98 / 4.3</p>
+            <details class="courses">
+              <summary>Relevant coursework <span>(9)</span></summary>
+              <ul>
+                <li><span>Introduction to Random Variables and Random Processes</span><span class="term">Spring 2025</span><span class="grade">A+</span></li>
+                <li><span>Introduction to Circuit Theory and Laboratory</span><span class="term">Spring 2025</span><span class="grade">A+</span></li>
+                <li><span>Programming Methodology</span><span class="term">Fall 2024</span><span class="grade">A+</span></li>
+                <li><span>Engineering Mathematics 2</span><span class="term">Fall 2024</span><span class="grade">A+</span></li>
+                <li><span>Structural Dynamics</span><span class="term">Fall 2024</span><span class="grade">A+</span></li>
+                <li><span>Digital Computer Concept and Practice</span><span class="term">Fall 2023</span><span class="grade">A+</span></li>
+                <li><span>Signals and Systems</span><span class="term">Spring 2025</span><span class="grade">A0</span></li>
+                <li><span>Structural Statics</span><span class="term">Spring 2025</span><span class="grade">A0</span></li>
+                <li><span>Engineering Mathematics 1</span><span class="term">Spring 2024</span><span class="grade">A0</span></li>
+              </ul>
+            </details></div>
+      </li>
+    </ul>
+  </section>
+
   <section id="work">
     <div class="section-head"><h2>Selected work</h2><span class="muted small">Hover a project to read more</span></div>
     <div class="works">
+
+      <article class="work" tabindex="0">
+        <div class="visual light"><a href="assets/img/dti-native-pipeline.png" title="Open full size"><img src="assets/img/dti-native-pipeline.png" alt="Top: the conventional PSMD skeleton, warped to a template, falls off this brain's white matter, while our tract-core ROIs sit on the brain's own FA map. Bottom: the pipeline, a native-space FA volume, a CNN slice selector, then a U-Net ROI drawer placing 13 tract-core ROIs" loading="lazy" width="2000" height="1207"></a></div>
+        <div>
+          <span class="tag">End-to-end pipeline · RSNA 2026, first author</span>
+          <h3>Measuring the brain without warping it</h3>
+          <p class="hook">Diffusion-MRI biomarkers break when every brain is forced onto a template. I removed the template.</p>
+          <div class="hint">Hover to read more</div>
+          <div class="more"><div><p>Standard pipelines warp each brain onto a template first, which fails in exactly the atrophied brains clinicians care about. My hypothesis was that we could skip the warp: networks find 13 white-matter tract cores in each scan's own space. I built the whole ML pipeline around this, including slice selection, ROI regression, age- and sex-normed percentiles and GPU tractography, and it is now going through FDA clearance. On <b>784 public repeat-scan pairs</b>, it was <b>3.5× more repeatable</b> than the standard PSMD marker (±11.2% vs ±39.8%) and <b>~10× faster</b> (9 s vs 89 s), at a modest cost in discrimination (AUC 0.80 vs 0.84).<span class="credit">Figures: my RSNA 2026 talk, OASIS-3 data used under the OASIS data use agreement.</span></p></div></div>
+        </div>
+      </article>
+
+      <article class="work wide" tabindex="0">
+        <div class="visual light"><img src="assets/img/diffbmp-video.gif" alt="DiffBMP video demo: a pencil-sketch portrait sequence rendered from two bitmap primitives, a pocket watch and clock hands, shown in the corner" loading="lazy" width="320" height="320"><a href="assets/img/diffbmp-figures.png" title="Open full size"><img src="assets/img/diffbmp-figures.png" alt="From the DiffBMP paper: Fig. 2, the framework; Fig. 4, Dynamic DiffBMP removing a primitive stuck on a video frame; Table 4, the Dynamic DiffBMP ablation over 17 videos" loading="lazy" width="1800" height="1215"></a></div>
+        <div>
+          <span class="tag">Differentiable rendering · CVPR 2026</span>
+          <h3>DiffBMP: images made of images</h3>
+          <p class="hook">A CUDA renderer that fits thousands of bitmap primitives to a target in under a minute.</p>
+          <div class="hint">Hover to read more</div>
+          <div class="more"><div><p>I built <b>Dynamic DiffBMP</b>, the video extension: warm-start each frame from the previous one, remove primitives that get stuck and block gradients, and freeze regions that don't change. Across 17 videos this <b>cut temporal flicker (tLP) by 53%</b> with no loss in fidelity, and I also contributed structure-aware initialization. Looking into <em>why</em> primitives get stuck, I found that their per-pixel gradients cancel when summed. I then ranked them by per-pixel gradient magnitude instead, which is unpublished follow-up work. <a href="https://arxiv.org/abs/2602.22625">Paper</a> · <a href="https://diffbmp.com/">Project</a> · <a href="https://github.com/smhongok/diffbmp">Code</a><span class="credit">Video: diffbmp.com demo. Figures: DiffBMP paper (Fig. 2, Fig. 4, Table 4).</span></p></div></div>
+        </div>
+      </article>
+
+      <article class="work" tabindex="0">
+        <div class="visual dark"><a href="assets/img/spine-pseudo-labels.png" title="Open full size"><img src="assets/img/spine-pseudo-labels.png" alt="Left: a whole sagittal T2 MRI of the lumbar spine with the L5/S1 disc boxed. Right: that disc zoomed in, with four candidate herniation pseudo-labels below it, each generated from disc-level yes/no labels without manual annotation" loading="lazy" width="1600" height="999"></a></div>
+        <div>
+          <span class="tag">0 → 1 · Weak supervision · AIRS Medical</span>
+          <h3>From zero labels to a human-in-the-loop model</h3>
+          <p class="hook">Pseudo-labels get a first model running fast, so people correct its predictions instead of drawing from scratch.</p>
+          <div class="hint">Hover to read more</div>
+          <div class="more"><div><p>I'm building a lumbar-spine MRI product on my own, starting with deciding which measurements matter clinically. The bottleneck was labels: open datasets only say whether each disc is abnormal. I used <b>several weakly supervised strategies to turn those weak labels into pixel-level training labels</b> (classification → segmentation) <b>with no manual annotation</b>. That is what gets the snowball rolling: once a model proposes plausible masks, an annotator only makes small corrections, and each round of corrections trains the next model. The figure shows candidate labels for one herniated disc. I also built a pseudo-labeling toolkit that my team has since adopted.<span class="credit">Image: public SPIDER lumbar-spine dataset.</span></p></div></div>
+        </div>
+      </article>
 
       <article class="work" tabindex="0">
         <div class="visual"><svg viewBox="0 0 920 530" role="img" aria-labelledby="f1t f1d">
@@ -121,17 +227,6 @@
       </article>
 
       <article class="work" tabindex="0">
-        <div class="visual light"><a href="assets/img/dti-native-pipeline.png" title="Open full size"><img src="assets/img/dti-native-pipeline.png" alt="Top: the conventional PSMD skeleton, warped to a template, falls off this brain's white matter, while our tract-core ROIs sit on the brain's own FA map. Bottom: the pipeline, a native-space FA volume, a CNN slice selector, then a U-Net ROI drawer placing 13 tract-core ROIs" loading="lazy" width="2000" height="1207"></a></div>
-        <div>
-          <span class="tag">End-to-end pipeline · RSNA 2026, first author</span>
-          <h3>Measuring the brain without warping it</h3>
-          <p class="hook">Diffusion-MRI biomarkers break when every brain is forced onto a template. I removed the template.</p>
-          <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>Standard pipelines warp each brain onto a template first, which fails in exactly the atrophied brains clinicians care about. My hypothesis was that we could skip the warp: networks find 13 white-matter tract cores in each scan's own space. I built the whole ML pipeline around this, including slice selection, ROI regression, age- and sex-normed percentiles and GPU tractography, and it is now going through FDA clearance. On <b>784 public repeat-scan pairs</b>, it was <b>3.5× more repeatable</b> than the standard PSMD marker (±11.2% vs ±39.8%) and <b>~10× faster</b> (9 s vs 89 s), at a modest cost in discrimination (AUC 0.80 vs 0.84).<span class="credit">Figures: my RSNA 2026 talk, OASIS-3 data used under the OASIS data use agreement.</span></p></div></div>
-        </div>
-      </article>
-
-      <article class="work" tabindex="0">
         <div class="visual"><svg viewBox="0 0 640 400" role="img" aria-labelledby="et ed">
   <title id="et">Two valid answers</title>
   <desc id="ed">A real color-FA crop of the right centrum semiovale from a public IXI scan. The model's ROI and the radiologist's ROI sit a few millimetres apart along the same tract, so their overlap is nearly zero, yet the mean FA inside each is almost identical.</desc>
@@ -169,82 +264,7 @@
         </div>
       </article>
 
-      <article class="work wide" tabindex="0">
-        <div class="visual light"><img src="assets/img/diffbmp-video.gif" alt="DiffBMP video demo: a pencil-sketch portrait sequence rendered from two bitmap primitives, a pocket watch and clock hands, shown in the corner" loading="lazy" width="320" height="320"><a href="assets/img/diffbmp-figures.png" title="Open full size"><img src="assets/img/diffbmp-figures.png" alt="From the DiffBMP paper: Fig. 2, the framework; Fig. 4, Dynamic DiffBMP removing a primitive stuck on a video frame; Table 4, the Dynamic DiffBMP ablation over 17 videos" loading="lazy" width="1800" height="1215"></a></div>
-        <div>
-          <span class="tag">Differentiable rendering · CVPR 2026</span>
-          <h3>DiffBMP: images made of images</h3>
-          <p class="hook">A CUDA renderer that fits thousands of bitmap primitives to a target in under a minute.</p>
-          <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>I built <b>Dynamic DiffBMP</b>, the video extension: warm-start each frame from the previous one, remove primitives that get stuck and block gradients, and freeze regions that don't change. Across 17 videos this <b>cut temporal flicker (tLP) by 53%</b> with no loss in fidelity, and I also contributed structure-aware initialization. Looking into <em>why</em> primitives get stuck, I found that their per-pixel gradients cancel when summed. I then ranked them by per-pixel gradient magnitude instead, which is unpublished follow-up work. <a href="https://arxiv.org/abs/2602.22625">Paper</a> · <a href="https://diffbmp.com/">Project</a> · <a href="https://github.com/smhongok/diffbmp">Code</a><span class="credit">Video: diffbmp.com demo. Figures: DiffBMP paper (Fig. 2, Fig. 4, Table 4).</span></p></div></div>
-        </div>
-      </article>
-
-      <article class="work" tabindex="0">
-        <div class="visual dark"><a href="assets/img/spine-pseudo-labels.png" title="Open full size"><img src="assets/img/spine-pseudo-labels.png" alt="Left: a whole sagittal T2 MRI of the lumbar spine with the L5/S1 disc boxed. Right: that disc zoomed in, with four candidate herniation pseudo-labels below it, each generated from disc-level yes/no labels without manual annotation" loading="lazy" width="1600" height="999"></a></div>
-        <div>
-          <span class="tag">0 → 1 · Weak supervision · AIRS Medical</span>
-          <h3>A spine product from a blank page</h3>
-          <p class="hook">Open data says <em>whether</em> a disc is herniated. A product has to say <em>where</em>.</p>
-          <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>I'm building a lumbar-spine MRI product on my own, starting with deciding which measurements matter clinically. The bottleneck was labels: open datasets only say whether each disc is abnormal. I used <b>several weakly supervised strategies to turn those weak labels into pixel-level training labels</b> (classification → segmentation) <b>with no manual annotation</b>. The figure shows candidate labels for one herniated disc. I also built a pseudo-labeling toolkit that my team has since adopted.<span class="credit">Image: public SPIDER lumbar-spine dataset.</span></p></div></div>
-        </div>
-      </article>
-
     </div>
-  </section>
-
-  <section id="publications">
-    <div class="section-head"><h2>Publications</h2></div>
-    <ul class="list">
-      <li>
-        <span class="when">CVPR 2026</span>
-        <div class="what">
-          <b>DiffBMP: Differentiable Rendering with Bitmap Primitives</b>
-          <p>Seongmin Hong*, Junghun James Kim*, Daehyeop Kim, <b>Insoo Chung</b>, Se Young Chun.
-          <a href="https://arxiv.org/abs/2602.22625">arXiv</a> · <a href="https://diffbmp.com/">project</a> · <a href="https://github.com/smhongok/diffbmp">code</a></p>
-        </div>
-      </li>
-      <li>
-        <span class="when">RSNA 2026</span>
-        <div class="what">
-          <b>Native-Space Deep Learning for Reproducible Diffusion MRI Biomarkers of Cognitive Impairment without Spatial Normalization</b>
-          <p><b>Insoo Chung</b>, Woojin Jung, Jung Hoon Lee. Scientific presentation.</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <section id="experience">
-    <div class="section-head"><h2>Experience</h2></div>
-    <ul class="list">
-      <li>
-        <span class="when">Jun 2025 – now</span>
-        <div class="what"><b>AI Research Scientist</b>, AIRS Medical
-          <p>Brain DTI, lumbar spine and brain volumetry models: data, labels, architecture, training, evaluation and release.</p></div>
-      </li>
-      <li>
-        <span class="when">Jun – Sep 2025</span>
-        <div class="what"><b>Research Intern</b>, Intelligent Computational Imaging Lab, Seoul National University
-          <p>DiffBMP (CVPR 2026): dynamic / video optimization, structure-aware initialization, gradient-collision analysis.</p></div>
-      </li>
-      <li>
-        <span class="when">Jul – Aug 2024</span>
-        <div class="what"><b>Corporate Intern</b>, Future Mobility Technology Center, Gyeonggi-do
-          <p>Real-time ROS perception nodes fusing LiDAR and camera data for autonomous driving.</p></div>
-      </li>
-    </ul>
-  </section>
-
-  <section id="education">
-    <div class="section-head"><h2>Education</h2></div>
-    <ul class="list">
-      <li>
-        <span class="when">2023 – 2029 (exp.)</span>
-        <div class="what"><b>B.S. Electrical and Computer Engineering</b>, Seoul National University
-          <p>GPA 3.98 / 4.3. Random Variables &amp; Random Processes (A+), Signals &amp; Systems, Engineering Mathematics I–II, Programming Methodology (A+).</p></div>
-      </li>
-    </ul>
   </section>
 
   <section id="contact">

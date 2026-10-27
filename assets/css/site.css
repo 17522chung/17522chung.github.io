@@ -243,7 +243,9 @@ svg text { font-family: var(--sans); }
   background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 22px;
   outline: none; transition: border-color .2s, box-shadow .2s;
 }
+.work:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); }
 .work:nth-child(even) .visual { order: 2; }
+.work .visual > a { display: contents; cursor: zoom-in; }
 .work .visual {
   border-radius: 12px; overflow: hidden; background: var(--bg); aspect-ratio: 16 / 10;
   display: flex; align-items: center; justify-content: center;
@@ -273,6 +275,7 @@ svg text { font-family: var(--sans); }
 }
 @media (max-width: 760px) {
   .work { grid-template-columns: 1fr; gap: 18px; padding: 16px; }
+  .work:nth-child(even) { grid-template-columns: 1fr; }
   .work:nth-child(even) .visual { order: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .work .more { transition: none; } }

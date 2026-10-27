@@ -50,7 +50,7 @@
       <article class="work" tabindex="0">
         <div class="visual"><svg viewBox="0 0 920 330" role="img" aria-labelledby="f1t f1d">
           <title id="f1t">Benchmark design</title>
-          <desc id="f1d">One subject is scanned at an anchor protocol and at a perturbed protocol differing in one parameter. The model's regional volumes for both are compared to give a per-region drift, which is aggregated over a grid of shift axes by regions into per-axis verdicts and a continuous consistency score.</desc>
+          <desc id="f1d">Real scans of the same brain: an anchor at flip angle 12° and a perturbed scan at 6°, where tissue boundaries look different. One subject is scanned at an anchor protocol and at a perturbed protocol differing in one parameter. The model's regional volumes for both are compared to give a per-region drift, which is aggregated over a grid of shift axes by regions into per-axis verdicts and a continuous consistency score.</desc>
           <defs>
             <marker id="ah-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="s-ink3"/></marker>
           </defs>
@@ -59,17 +59,17 @@
           <text x="75" y="160" text-anchor="middle" font-size="17" font-weight="600" class="s-ink">Subject s</text>
           <text x="75" y="180" text-anchor="middle" font-size="15" class="s-ink2">anatomy fixed</text>
           <!-- scans -->
-          <path d="M140,150 C170,150 170,80 200,80" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
-          <path d="M140,180 C170,180 170,250 200,250" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
-          <rect x="202" y="45" width="176" height="70" rx="10" class="s-surface k-rule" stroke-width="1.5"/>
-          <text x="290" y="74" text-anchor="middle" font-size="16" font-weight="600" class="s-ink">Anchor scan A</text>
-          <text x="290" y="94" text-anchor="middle" font-size="14" class="s-ink3">training-like protocol</text>
-          <rect x="202" y="215" width="176" height="70" rx="10" class="s-surface k-acc" stroke-width="1.5"/>
-          <text x="290" y="244" text-anchor="middle" font-size="16" font-weight="600" class="s-ink">Perturbed scan B</text>
-          <text x="290" y="264" text-anchor="middle" font-size="14" class="s-ink3">one knob moved</text>
+          <path d="M140,150 C180,150 180,94 222,94" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
+          <path d="M140,180 C180,180 180,236 222,236" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
+          <text x="290" y="22" text-anchor="middle" font-size="14" class="s-ink"><tspan font-weight="600">Anchor A</tspan><tspan class="s-ink3"> · flip angle 12°</tspan></text>
+          <image href="assets/img/ood-anchor.jpg" x="226" y="30" width="128" height="128"/>
+          <rect x="226" y="30" width="128" height="128" rx="6" fill="none" class="k-rule" stroke-width="1.5"/>
+          <image href="assets/img/ood-perturbed.jpg" x="226" y="172" width="128" height="128"/>
+          <rect x="226" y="172" width="128" height="128" rx="6" fill="none" class="k-acc" stroke-width="2.5"/>
+          <text x="290" y="320" text-anchor="middle" font-size="14" class="s-ink"><tspan font-weight="600">Perturbed B</tspan><tspan class="s-ink3"> · flip angle 6°</tspan></text>
           <!-- model -->
-          <path d="M378,80 C410,80 410,150 438,150" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
-          <path d="M378,250 C410,250 410,180 438,180" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
+          <path d="M354,94 C400,94 400,150 438,150" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
+          <path d="M354,236 C400,236 400,180 438,180" fill="none" class="k-ink3" stroke-width="1.5" marker-end="url(#ah-a)"/>
           <rect x="440" y="130" width="120" height="70" rx="10" class="s-ink"/>
           <text x="500" y="161" text-anchor="middle" font-size="16" font-weight="600" class="s-bg">Model</text>
           <text x="500" y="180" text-anchor="middle" font-size="14" class="s-bg">volumes</text>
@@ -103,37 +103,43 @@
       </article>
 
       <article class="work" tabindex="0">
-        <div class="visual dark"><img src="assets/img/dti-native-rois.png" alt="Tract-core ROIs placed directly on one brain's own fractional-anisotropy map at the midbrain, internal capsule and corona radiata" loading="lazy" width="1200" height="607"></div>
+        <div class="visual light"><a href="assets/img/dti-native-pipeline.png" title="Open full size"><img src="assets/img/dti-native-pipeline.png" alt="Top: the conventional PSMD skeleton, warped to a template, falls off this brain's white matter, while our tract-core ROIs sit on the brain's own FA map. Bottom: the pipeline, a native-space FA volume, a CNN slice selector, then a U-Net ROI drawer placing 13 tract-core ROIs" loading="lazy" width="2000" height="1207"></a></div>
         <div>
           <span class="tag">End-to-end pipeline · RSNA 2026, first author</span>
           <h3>Measuring the brain without warping it</h3>
           <p class="hook">Diffusion-MRI biomarkers break when every brain is forced onto a template. I removed the template.</p>
           <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>Standard pipelines warp each brain onto a template first, which fails in exactly the atrophied brains clinicians care about. My hypothesis was that we could skip the warp: networks find 13 white-matter tract cores in each scan's own space. I built the whole ML pipeline around this, including slice selection, ROI regression, age- and sex-normed percentiles and GPU tractography, and it is now going through FDA clearance. On <b>784 public repeat-scan pairs</b>, it was <b>3.5× more repeatable</b> than the standard PSMD marker (±11.2% vs ±39.8%) and <b>~10× faster</b> (9 s vs 89 s), at a modest cost in discrimination (AUC 0.80 vs 0.84).<span class="credit">Image: OASIS-3 data, used under the OASIS data use agreement.</span></p></div></div>
+          <div class="more"><div><p>Standard pipelines warp each brain onto a template first, which fails in exactly the atrophied brains clinicians care about. My hypothesis was that we could skip the warp: networks find 13 white-matter tract cores in each scan's own space. I built the whole ML pipeline around this, including slice selection, ROI regression, age- and sex-normed percentiles and GPU tractography, and it is now going through FDA clearance. On <b>784 public repeat-scan pairs</b>, it was <b>3.5× more repeatable</b> than the standard PSMD marker (±11.2% vs ±39.8%) and <b>~10× faster</b> (9 s vs 89 s), at a modest cost in discrimination (AUC 0.80 vs 0.84).<span class="credit">Figures: my RSNA 2026 talk, OASIS-3 data used under the OASIS data use agreement.</span></p></div></div>
         </div>
       </article>
 
       <article class="work" tabindex="0">
         <div class="visual"><svg viewBox="0 0 640 400" role="img" aria-labelledby="et ed">
   <title id="et">Two valid answers</title>
-  <desc id="ed">A white-matter tract core with two measurement circles in different places, both inside the tract. Overlap scores call them a disagreement, but they sample the same value.</desc>
-  <path d="M40,190 C160,120 300,250 420,170 S600,150 610,170 L610,250 C560,230 480,250 420,250 C300,330 160,200 40,270 Z" class="s-accsoft"/>
-  <text x="56" y="310" font-size="14" class="s-ink3">tract core: uniform inside</text>
-  <circle cx="215" cy="215" r="30" fill="none" class="k-acc" stroke-width="3.5"/>
-  <text x="215" y="160" text-anchor="middle" font-size="15" font-weight="600" class="s-acc">model</text>
-  <circle cx="470" cy="208" r="30" fill="none" class="k-ink" stroke-width="3" stroke-dasharray="7 5"/>
-  <text x="470" y="155" text-anchor="middle" font-size="15" font-weight="600" class="s-ink">radiologist</text>
-  <rect x="40" y="40" width="270" height="60" rx="10" class="s-surface k-rule" stroke-width="1.5"/>
-  <text x="58" y="66" font-size="14" class="s-ink3">Overlap (Dice)</text>
-  <text x="58" y="88" font-size="16" font-weight="600" class="s-bad">✗ "they disagree"</text>
-  <rect x="330" y="40" width="280" height="60" rx="10" class="s-surface k-rule" stroke-width="1.5"/>
-  <text x="348" y="66" font-size="14" class="s-ink3">Measured value</text>
-  <text x="348" y="88" font-size="16" font-weight="600" class="s-good">✓ same reading</text>
+  <desc id="ed">A real color-FA crop of the right centrum semiovale from a public IXI scan. The model's ROI and the radiologist's ROI sit a few millimetres apart along the same tract, so their overlap is nearly zero, yet the mean FA inside each is almost identical.</desc>
+  <image href="assets/img/dti-roi-pair.png" x="20" y="20" width="316" height="316"/>
+  <image href="assets/img/dti-roi-slice.png" x="258" y="258" width="72" height="72" stroke="#fff"/>
+  <rect x="258" y="258" width="72" height="72" fill="none" stroke="#fff" stroke-width="1.5" opacity=".8"/>
+  <circle cx="180.6" cy="164.8" r="13.6" fill="none" stroke="#5cc8b6" stroke-width="3.5"/>
+  <circle cx="183.3" cy="193.8" r="19.7" fill="none" stroke="#ffb020" stroke-width="3" stroke-dasharray="6 4"/>
+  <circle cx="378" cy="36" r="9" fill="none" stroke="#5cc8b6" stroke-width="3.5"/>
+  <text x="396" y="41" font-size="15" font-weight="600" class="s-ink">model</text>
+  <circle cx="470" cy="36" r="9" fill="none" stroke="#ffb020" stroke-width="3" stroke-dasharray="5 3"/>
+  <text x="488" y="41" font-size="15" font-weight="600" class="s-ink">radiologist</text>
+  <rect x="364" y="66" width="256" height="70" rx="10" class="s-surface k-rule" stroke-width="1.5"/>
+  <text x="382" y="94" font-size="14" class="s-ink3">Overlap (Dice)</text>
+  <text x="382" y="119" font-size="16" font-weight="600" class="s-bad">✗ 0.06 · "they disagree"</text>
+  <rect x="364" y="150" width="256" height="70" rx="10" class="s-surface k-rule" stroke-width="1.5"/>
+  <text x="382" y="178" font-size="14" class="s-ink3">Measured value (mean FA)</text>
+  <text x="382" y="203" font-size="16" font-weight="600" class="s-good">✓ 0.423 vs 0.425</text>
+  <text x="364" y="252" font-size="13" class="s-ink3">Same tract, a few mm apart:</text>
+  <text x="364" y="270" font-size="13" class="s-ink3">both are valid placements.</text>
+  <text x="364" y="330" font-size="11" class="s-ink3">Public IXI scan · right centrum semiovale</text>
   <g font-size="13" class="s-ink2">
-    <rect x="40" y="340" width="122" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="101" y="362" text-anchor="middle">rescan stable?</text>
-    <rect x="172" y="340" width="138" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="241" y="362" text-anchor="middle">same conclusion?</text>
-    <rect x="320" y="340" width="130" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="385" y="362" text-anchor="middle">clinical signal?</text>
-    <rect x="460" y="340" width="150" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="535" y="362" text-anchor="middle">fails silently?</text>
+    <rect x="20" y="354" width="128" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="84" y="376" text-anchor="middle">rescan stable?</text>
+    <rect x="160" y="354" width="144" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="232" y="376" text-anchor="middle">same conclusion?</text>
+    <rect x="316" y="354" width="136" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="384" y="376" text-anchor="middle">clinical signal?</text>
+    <rect x="464" y="354" width="156" height="34" rx="17" class="s-surface k-rule" stroke-width="1.2"/><text x="542" y="376" text-anchor="middle">fails silently?</text>
   </g>
 </svg></div>
         <div>
@@ -141,23 +147,23 @@
           <h3>Grading a model when there's no right answer</h3>
           <p class="hook">Any circle inside a tract core is equally correct, so a hand-drawn label isn't ground truth.</p>
           <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>Scoring the DTI model by overlap with a radiologist's drawing penalizes it for choosing a different spot that is just as valid. I built an evaluation harness that judges <b>what clinicians actually use, the measured value</b>, along axes that need no golden label: does a rescan give the same number, does it reach the same group-level conclusions as a human reader, does it carry the clinical signal, and does it ever fail silently. It changed decisions. A version that was <b>geometrically more accurate turned out to be less repeatable</b>, so we stopped optimizing for geometry.</p></div></div>
+          <div class="more"><div><p>Scoring the DTI model by overlap with a radiologist's drawing penalizes it for choosing a different spot that is just as valid. I built an evaluation harness that judges <b>what clinicians actually use, the measured value</b>, along axes that need no golden label: does a rescan give the same number, does it reach the same group-level conclusions as a human reader, does it carry the clinical signal, and does it ever fail silently. It changed decisions. A version that was <b>geometrically more accurate turned out to be less repeatable</b>, so we stopped optimizing for geometry.<span class="credit">Image: public IXI dataset (CC BY-SA 3.0).</span></p></div></div>
         </div>
       </article>
 
       <article class="work" tabindex="0">
-        <div class="visual light"><img src="assets/img/diffbmp-optimization.gif" alt="Animated optimization: scattered circle primitives gradually arrange themselves into the letters IPA" loading="lazy" width="720" height="720"></div>
+        <div class="visual light"><a href="assets/img/diffbmp-figures.png" title="Open full size"><img src="assets/img/diffbmp-figures.png" alt="From the DiffBMP paper: Fig. 2, the framework; Fig. 4, Dynamic DiffBMP removing a primitive stuck on a video frame; Table 4, the Dynamic DiffBMP ablation over 17 videos" loading="lazy" width="1800" height="1215"></a></div>
         <div>
           <span class="tag">Differentiable rendering · CVPR 2026</span>
           <h3>DiffBMP: images made of images</h3>
           <p class="hook">A CUDA renderer that fits thousands of bitmap primitives to a target in under a minute.</p>
           <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>I built <b>Dynamic DiffBMP</b>, the video extension: warm-start each frame from the previous one, remove primitives that get stuck and block gradients, and freeze regions that don't change. Across 17 videos this <b>cut temporal flicker (tLP) by 53%</b> with no loss in fidelity, and I also contributed structure-aware initialization. Looking into <em>why</em> primitives get stuck, I found that their per-pixel gradients cancel when summed. I then ranked them by per-pixel gradient magnitude instead, which is unpublished follow-up work. <a href="https://arxiv.org/abs/2602.22625">Paper</a> · <a href="https://diffbmp.com/">Project</a> · <a href="https://github.com/smhongok/diffbmp">Code</a></p></div></div>
+          <div class="more"><div><p>I built <b>Dynamic DiffBMP</b>, the video extension: warm-start each frame from the previous one, remove primitives that get stuck and block gradients, and freeze regions that don't change. Across 17 videos this <b>cut temporal flicker (tLP) by 53%</b> with no loss in fidelity, and I also contributed structure-aware initialization. Looking into <em>why</em> primitives get stuck, I found that their per-pixel gradients cancel when summed. I then ranked them by per-pixel gradient magnitude instead, which is unpublished follow-up work. <a href="https://arxiv.org/abs/2602.22625">Paper</a> · <a href="https://diffbmp.com/">Project</a> · <a href="https://github.com/smhongok/diffbmp">Code</a><span class="credit">Figures: DiffBMP paper (Fig. 2, Fig. 4, Table 4).</span></p></div></div>
         </div>
       </article>
 
       <article class="work" tabindex="0">
-        <div class="visual dark"><img src="assets/img/spine-pseudo-labels.png" alt="A sagittal T2 MRI of a lumbar disc, with four candidate herniation pseudo-labels below it, each generated from disc-level yes/no labels without manual annotation" loading="lazy" width="952" height="1008"></div>
+        <div class="visual dark"><a href="assets/img/spine-pseudo-labels.png" title="Open full size"><img src="assets/img/spine-pseudo-labels.png" alt="Left: a whole sagittal T2 MRI of the lumbar spine with the L5/S1 disc boxed. Right: that disc zoomed in, with four candidate herniation pseudo-labels below it, each generated from disc-level yes/no labels without manual annotation" loading="lazy" width="1600" height="999"></a></div>
         <div>
           <span class="tag">0 → 1 · Weak supervision · AIRS Medical</span>
           <h3>A spine product from a blank page</h3>

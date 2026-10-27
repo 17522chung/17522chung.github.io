@@ -169,14 +169,14 @@
         </div>
       </article>
 
-      <article class="work" tabindex="0">
-        <div class="visual light"><a href="assets/img/diffbmp-figures.png" title="Open full size"><img src="assets/img/diffbmp-figures.png" alt="From the DiffBMP paper: Fig. 2, the framework; Fig. 4, Dynamic DiffBMP removing a primitive stuck on a video frame; Table 4, the Dynamic DiffBMP ablation over 17 videos" loading="lazy" width="1800" height="1215"></a></div>
+      <article class="work wide" tabindex="0">
+        <div class="visual light"><img src="assets/img/diffbmp-video.gif" alt="DiffBMP video demo: a pencil-sketch portrait sequence rendered from two bitmap primitives, a pocket watch and clock hands, shown in the corner" loading="lazy" width="320" height="320"><a href="assets/img/diffbmp-figures.png" title="Open full size"><img src="assets/img/diffbmp-figures.png" alt="From the DiffBMP paper: Fig. 2, the framework; Fig. 4, Dynamic DiffBMP removing a primitive stuck on a video frame; Table 4, the Dynamic DiffBMP ablation over 17 videos" loading="lazy" width="1800" height="1215"></a></div>
         <div>
           <span class="tag">Differentiable rendering · CVPR 2026</span>
           <h3>DiffBMP: images made of images</h3>
           <p class="hook">A CUDA renderer that fits thousands of bitmap primitives to a target in under a minute.</p>
           <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>I built <b>Dynamic DiffBMP</b>, the video extension: warm-start each frame from the previous one, remove primitives that get stuck and block gradients, and freeze regions that don't change. Across 17 videos this <b>cut temporal flicker (tLP) by 53%</b> with no loss in fidelity, and I also contributed structure-aware initialization. Looking into <em>why</em> primitives get stuck, I found that their per-pixel gradients cancel when summed. I then ranked them by per-pixel gradient magnitude instead, which is unpublished follow-up work. <a href="https://arxiv.org/abs/2602.22625">Paper</a> · <a href="https://diffbmp.com/">Project</a> · <a href="https://github.com/smhongok/diffbmp">Code</a><span class="credit">Figures: DiffBMP paper (Fig. 2, Fig. 4, Table 4).</span></p></div></div>
+          <div class="more"><div><p>I built <b>Dynamic DiffBMP</b>, the video extension: warm-start each frame from the previous one, remove primitives that get stuck and block gradients, and freeze regions that don't change. Across 17 videos this <b>cut temporal flicker (tLP) by 53%</b> with no loss in fidelity, and I also contributed structure-aware initialization. Looking into <em>why</em> primitives get stuck, I found that their per-pixel gradients cancel when summed. I then ranked them by per-pixel gradient magnitude instead, which is unpublished follow-up work. <a href="https://arxiv.org/abs/2602.22625">Paper</a> · <a href="https://diffbmp.com/">Project</a> · <a href="https://github.com/smhongok/diffbmp">Code</a><span class="credit">Video: diffbmp.com demo. Figures: DiffBMP paper (Fig. 2, Fig. 4, Table 4).</span></p></div></div>
         </div>
       </article>
 

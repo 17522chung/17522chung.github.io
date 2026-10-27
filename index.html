@@ -48,11 +48,12 @@
     <div class="works">
 
       <article class="work" tabindex="0">
-        <div class="visual"><svg viewBox="0 0 920 330" role="img" aria-labelledby="f1t f1d">
+        <div class="visual"><svg viewBox="0 0 920 530" role="img" aria-labelledby="f1t f1d">
           <title id="f1t">Benchmark design</title>
-          <desc id="f1d">Real scans of the same brain: an anchor at flip angle 12° and a perturbed scan at 6°, where tissue boundaries look different. One subject is scanned at an anchor protocol and at a perturbed protocol differing in one parameter. The model's regional volumes for both are compared to give a per-region drift, which is aggregated over a grid of shift axes by regions into per-axis verdicts and a continuous consistency score.</desc>
+          <desc id="f1d">Real scans of the same brain: an anchor at flip angle 12° and a perturbed scan at 6°, where tissue boundaries look different. Below, two real training slices, each followed by two augmented versions of the same anatomy. One subject is scanned at an anchor protocol and at a perturbed protocol differing in one parameter. The model's regional volumes for both are compared to give a per-region drift, which is aggregated over a grid of shift axes by regions into per-axis verdicts and a continuous consistency score.</desc>
           <defs>
             <marker id="ah-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="s-ink3"/></marker>
+            <marker id="ah-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-acc"/></marker>
           </defs>
           <!-- subject -->
           <rect x="10" y="125" width="130" height="80" rx="10" class="s-accsoft"/>
@@ -92,6 +93,23 @@
             <text x="75" y="150" text-anchor="middle" font-size="15" font-weight="600" class="s-ink">verdict per axis</text>
             <text x="75" y="168" text-anchor="middle" font-size="15" font-weight="600" class="s-ink">+ consistency score</text>
           </g>
+          <!-- fix: augmented training data -->
+          <line x1="10" y1="342" x2="910" y2="342" class="k-rule" stroke-width="1.5"/>
+          <text x="10" y="368" font-size="15" font-weight="600" class="s-ink">Training data: same anatomy, new appearance</text>
+          <image href="assets/img/ood-aug-1.jpg" x="10" y="380" width="132" height="114"/>
+          <rect x="10" y="380" width="132" height="114" fill="none" class="k-ink3" stroke-width="1.5"/>
+          <text x="76" y="516" text-anchor="middle" font-size="14" class="s-ink3">real</text>
+          <path d="M147,437 L167,437" class="k-acc" stroke-width="2.5" marker-end="url(#ah-b)"/>
+          <image href="assets/img/ood-aug-2.jpg" x="172" y="380" width="132" height="114"/>
+          <image href="assets/img/ood-aug-3.jpg" x="312" y="380" width="132" height="114"/>
+          <text x="308" y="516" text-anchor="middle" font-size="14" class="s-acc">augmented</text>
+          <image href="assets/img/ood-aug-4.jpg" x="476" y="380" width="132" height="114"/>
+          <rect x="476" y="380" width="132" height="114" fill="none" class="k-ink3" stroke-width="1.5"/>
+          <text x="542" y="516" text-anchor="middle" font-size="14" class="s-ink3">real</text>
+          <path d="M613,437 L633,437" class="k-acc" stroke-width="2.5" marker-end="url(#ah-b)"/>
+          <image href="assets/img/ood-aug-5.jpg" x="638" y="380" width="132" height="114"/>
+          <image href="assets/img/ood-aug-6.jpg" x="778" y="380" width="132" height="114"/>
+          <text x="774" y="516" text-anchor="middle" font-size="14" class="s-acc">augmented</text>
         </svg></div>
         <div>
           <span class="tag">Robustness · Evaluation · AIRS Medical</span>

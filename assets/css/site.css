@@ -326,6 +326,7 @@ svg text { font-family: var(--sans); }
 .btn { display: inline-block; padding: 9px 16px; border-radius: 9px; background: var(--accent); color: var(--bg); font-weight: 600; font-size: 0.92rem; text-decoration: none; border: 1px solid var(--accent); }
 .btn:hover { filter: brightness(1.08); }
 .btn.ghost { background: transparent; color: var(--accent); }
+@media (max-width: 400px) { .cta-row { gap: 8px; } .btn { padding: 9px 12px; } }
 
 /* ---------- contact: night-river photo fading in from the right, under the text ---------- */
 #contact { padding-top: 32px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center; }

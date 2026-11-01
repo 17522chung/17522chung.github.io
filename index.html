@@ -268,6 +268,91 @@
     </div>
   </section>
 
+  <section id="explorations">
+    <div class="section-head"><h2>Explorations</h2><span class="muted small">Early experiments I'm learning from, not finished research</span></div>
+    <div class="explore">
+
+      <article class="xcard">
+        <div class="visual"><svg viewBox="0 0 600 440" role="img" aria-label="Two-stage generator. Appearance path: an encoder, a diffusion UNet and a decoder, where the encoder and decoder never see the label. Label path: the category and requested ROI disks enter only at the diffusion UNet. Below, three generated colour-FA slices with their requested ROI disks.">
+  <defs><marker id="xa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-acc"/></marker>
+  <marker id="xw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-warn"/></marker>
+  <clipPath id="xclip"><rect x="0" y="206" width="600" height="200" rx="8"/></clipPath></defs>
+  <text x="10" y="18" font-size="13" font-weight="600" letter-spacing="1.2" class="s-acc">APPEARANCE · FROM EVERY SLICE</text>
+  <rect x="10" y="32" width="150" height="64" rx="8" class="s-surface k-rule" stroke-width="1.5"/>
+  <text x="85" y="60" text-anchor="middle" font-size="18" font-weight="600" class="s-ink">encoder</text>
+  <text x="85" y="82" text-anchor="middle" font-size="14" class="s-ink3">never sees label</text>
+  <rect x="228" y="28" width="144" height="72" rx="8" class="s-accsoft k-acc" stroke-width="2"/>
+  <text x="300" y="59" text-anchor="middle" font-size="18" font-weight="600" class="s-ink">diffusion</text>
+  <text x="300" y="81" text-anchor="middle" font-size="18" font-weight="600" class="s-ink">UNet</text>
+  <rect x="440" y="32" width="150" height="64" rx="8" class="s-surface k-rule" stroke-width="1.5"/>
+  <text x="515" y="60" text-anchor="middle" font-size="18" font-weight="600" class="s-ink">decoder</text>
+  <text x="515" y="82" text-anchor="middle" font-size="14" class="s-ink3">never sees label</text>
+  <line x1="160" y1="64" x2="224" y2="64" class="k-acc" stroke-width="2" marker-end="url(#xa)"/>
+  <line x1="372" y1="64" x2="436" y2="64" class="k-acc" stroke-width="2" marker-end="url(#xa)"/>
+  <rect x="180" y="140" width="240" height="56" rx="8" class="s-warnsoft k-warn" stroke-width="1.5"/>
+  <text x="300" y="164" text-anchor="middle" font-size="17" font-weight="600" class="s-ink">category + ROI disks</text>
+  <text x="300" y="185" text-anchor="middle" font-size="14" class="s-ink3">the only way in for the label</text>
+  <line x1="300" y1="140" x2="300" y2="104" class="k-warn" stroke-width="2" marker-end="url(#xw)"/>
+  <text x="10" y="173" font-size="13" font-weight="600" letter-spacing="1.2" class="s-warn">LABEL</text>
+  <path d="M515 96 V200" class="k-acc" stroke-width="2" fill="none" marker-end="url(#xa)"/>
+  <image href="assets/img/gen-slices.jpg" x="0" y="206" width="600" height="200" clip-path="url(#xclip)"/>
+  <text x="300" y="432" text-anchor="middle" font-size="14" class="s-ink3">Generated, not real scans · rings = requested ROIs</text>
+</svg></div>
+        <span class="tag">Generative models · training data</span>
+        <h3>Generating labelled training data when labels are scarce</h3>
+        <p>A model that places ROIs on diffusion-MRI slices had only a few thousand hand-drawn examples to learn from. Instead of tuning the model again, I tried making more data: a two-stage generator that paints a realistic colour-FA slice around the ROI disks I ask for.</p>
+        <p>The label never reaches the part that paints pixels, so the generator can't cheat by drawing a mark where the ROI is. I then checked that it really puts anatomy where asked, and found a failure no automatic check caught: some samples came out as empty, dark frames, which I only spotted by looking.</p>
+        <p class="status">Paused · the generator works; not yet used for training</p>
+      </article>
+
+      <article class="xcard">
+        <div class="visual"><svg viewBox="0 0 600 440" role="img" aria-label="Describe first: the model writes inferior, midline, vertical and WM-like before the name medulla, and the name is predicted from those words. Names only: straight from the scan and point to the name. Next: a lesion description, reasoning, then a region mask or a verdict.">
+  <defs><marker id="xb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-acc"/></marker></defs>
+  <text x="10" y="18" font-size="13" font-weight="600" letter-spacing="1.2" class="s-acc">DESCRIBE FIRST</text>
+  <path d="M182 84 Q360 22 528 82" class="k-acc" stroke-width="1.6" fill="none" marker-end="url(#xb)"/>
+  <path d="M262 84 Q400 36 532 82" class="k-acc" stroke-width="1.6" fill="none" marker-end="url(#xb)"/>
+  <path d="M342 84 Q440 50 536 82" class="k-acc" stroke-width="1.6" fill="none" marker-end="url(#xb)"/>
+  <path d="M422 84 Q480 66 540 82" class="k-acc" stroke-width="1.6" fill="none" marker-end="url(#xb)"/>
+  <g font-size="15.5" text-anchor="middle">
+    <rect x="10" y="86" width="60" height="38" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="40" y="110" class="s-ink3">scan</text>
+    <rect x="76" y="86" width="60" height="38" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="106" y="110" class="s-ink3">point</text>
+    <rect x="142" y="86" width="78" height="38" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="181" y="110" class="s-ink">inferior</text>
+    <rect x="226" y="86" width="72" height="38" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="262" y="110" class="s-ink">midline</text>
+    <rect x="304" y="86" width="76" height="38" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="342" y="110" class="s-ink">vertical</text>
+    <rect x="386" y="86" width="74" height="38" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="423" y="110" class="s-ink">WM-like</text>
+    <text x="476" y="110" class="s-ink3">→</text>
+    <rect x="492" y="86" width="98" height="38" rx="6" class="s-accsoft k-acc" stroke-width="2"/><text x="541" y="110" font-weight="600" class="s-acc">medulla</text>
+  </g>
+  <text x="10" y="166" font-size="13" font-weight="600" letter-spacing="1.2" class="s-ink3">NAMES ONLY</text>
+  <g font-size="15.5" text-anchor="middle">
+    <rect x="10" y="178" width="60" height="38" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="40" y="202" class="s-ink3">scan</text>
+    <rect x="76" y="178" width="60" height="38" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="106" y="202" class="s-ink3">point</text>
+    <rect x="142" y="178" width="98" height="38" rx="6" class="s-accsoft k-acc" stroke-width="2"/><text x="191" y="202" font-weight="600" class="s-acc">medulla</text>
+  </g>
+  <text x="252" y="202" font-size="15" class="s-ink3">only the pixels to go on</text>
+  <text x="10" y="258" font-size="13" font-weight="600" letter-spacing="1.2" class="s-warn">NEXT</text>
+  <g font-size="15.5" text-anchor="middle">
+    <rect x="10" y="270" width="200" height="38" rx="6" class="s-surface k-rule" stroke-width="1.5" stroke-dasharray="5 4"/><text x="110" y="294" class="s-ink2">“lesion near the …”</text>
+    <text x="226" y="294" class="s-ink3">→</text>
+    <rect x="242" y="270" width="106" height="38" rx="6" class="s-surface k-rule" stroke-width="1.5" stroke-dasharray="5 4"/><text x="295" y="294" class="s-ink2">reasoning</text>
+    <text x="364" y="294" class="s-ink3">→</text>
+    <rect x="380" y="270" width="210" height="38" rx="6" class="s-warnsoft k-warn" stroke-width="1.5" stroke-dasharray="5 4"/><text x="485" y="294" class="s-ink">region mask · verdict</text>
+  </g>
+  <line x1="10" y1="350" x2="590" y2="350" class="k-rule" stroke-width="1.5"/>
+  <text x="10" y="384" font-size="15.5" class="s-ink2">Kill test: four structures never appear in training</text>
+  <text x="10" y="408" font-size="15.5" class="s-ink2">and are named from a definition alone.</text>
+  <text x="10" y="432" font-size="15.5" font-weight="600" class="s-ink">Describe-first has to beat names-only.</text>
+</svg></div>
+        <span class="tag">Vision-language models · post-training</span>
+        <h3>Teaching a model to describe anatomy before naming it</h3>
+        <p>Given a point in a brain MRI, the model first writes what it sees (position, side, shape, signal) and only then names the structure. Every one of those words is computed from label maps, so each step can be checked. The same data then serves as fine-tuning targets, preference pairs, and rewards for reinforcement learning.</p>
+        <p>If the describe-first model can't name structures it never trained on better than a names-only model, the reasoning is decoration. If it can, the next steps are finding a region from a lesion description and reaching a verdict by reasoning.</p>
+        <p class="status live">In progress · data pipeline and baselines done, model training next</p>
+      </article>
+
+    </div>
+  </section>
+
   <section id="contact">
     <figure class="contact-photo"><img src="assets/img/contact-river.jpg" alt="" width="1200" height="1200" loading="lazy"></figure>
     <div class="contact-text">

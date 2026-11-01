@@ -250,7 +250,7 @@ table.t th { font-weight: 600; font-size: 0.78rem; letter-spacing: 0.06em; text-
 .s-acc { fill: var(--accent); } .s-accsoft { fill: var(--accent-soft); }
 .s-surface { fill: var(--surface); } .s-bg { fill: var(--bg); }
 .s-good { fill: var(--good); } .s-warn { fill: var(--warn); } .s-bad { fill: var(--bad); }
-.k-rule { stroke: var(--rule); } .k-ink3 { stroke: var(--ink-3); } .k-acc { stroke: var(--accent); } .k-ink { stroke: var(--ink); }
+.k-rule { stroke: var(--rule); } .k-warn { stroke: var(--warn); } .s-warnsoft { fill: var(--warn-soft); } .k-ink3 { stroke: var(--ink-3); } .k-acc { stroke: var(--accent); } .k-ink { stroke: var(--ink); }
 svg text { font-family: var(--sans); }
 
 /* ---------- compact case study ---------- */
@@ -344,3 +344,16 @@ svg text { font-family: var(--sans); }
   .contact-photo img { border-radius: 0; }
   .contact-text { grid-column: 1; grid-row: 2; margin-top: -96px; }
 }
+
+/* ---------- explorations: lighter two-up cards, no hover-expand ---------- */
+.explore { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 24px; }
+.xcard { display: flex; flex-direction: column; gap: 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 18px; }
+.xcard .visual { border-radius: 12px; overflow: hidden; background: var(--bg); margin-bottom: 6px; }
+.xcard .visual svg { display: block; width: 100%; height: auto; padding: 10px; }
+.xcard .tag { font: 600 0.72rem/1 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+.xcard h3 { margin: 0; font-size: clamp(1.3rem, 2.2vw, 1.55rem); }
+.xcard p { margin: 0; font-size: 0.93rem; line-height: 1.6; color: var(--ink-2); }
+.xcard .status { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 0.82rem; color: var(--ink-3); }
+.xcard .status::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--warn); margin-right: 8px; vertical-align: 1px; }
+.xcard .status.live::before { background: var(--accent); }
+@media (max-width: 760px) { .explore { grid-template-columns: 1fr; } .xcard { padding: 16px; } }

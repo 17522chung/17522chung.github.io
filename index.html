@@ -268,6 +268,101 @@
     </div>
   </section>
 
+  <section id="explorations">
+    <div class="section-head"><h2>Explorations</h2><span class="muted small">Early experiments I'm learning from, not finished research</span></div>
+    <div class="explore">
+
+      <article class="xcard">
+        <div class="visual"><svg viewBox="0 0 760 500" role="img" aria-label="The generator. Appearance path: key slice, encoder, latent z, diffusion UNet, latent z0, decoder, generated slice; the encoder and decoder never see the category c or ROI circles p. Label path: c and p are rendered as disk maps, pooled to the latent grid and concatenated as input channels; category and cohort become an embedding added to the timestep embedding. Below, three generated slices with their requested ROI disks.">
+<defs><marker id="ga" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-acc"/></marker><marker id="gw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-warn"/></marker><marker id="gi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-ink3"/></marker></defs>
+<text x="10" y="16" font-size="12" font-weight="600" letter-spacing="1.2" class="s-acc">APPEARANCE PATH · LEARNED FROM EVERY SLICE, LABELLED OR NOT</text>
+<rect x="10" y="30" width="84" height="56" rx="7" class="s-accsoft k-acc" stroke-width="1.5"/><text x="52.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">key slice</text><text x="52.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">384²×3</text>
+<rect x="117" y="30" width="88" height="56" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="161.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">encoder</text><text x="161.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">no c, no p</text>
+<rect x="228" y="30" width="72" height="56" rx="7" class="s-accsoft k-acc" stroke-width="1.5"/><text x="264.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">z</text><text x="264.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">48²×4 · f8</text>
+<rect x="323" y="22" width="136" height="72" rx="7" class="s-surface k-ink" stroke-width="2"/><text x="391.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">diffusion UNet</text><text x="391.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">64.2 M · v-pred</text>
+<rect x="482" y="30" width="64" height="56" rx="7" class="s-accsoft k-acc" stroke-width="1.5"/><text x="514.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">z₀</text><text x="514.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">48²×4</text>
+<rect x="569" y="30" width="88" height="56" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="613.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">decoder</text><text x="613.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">no c, no p</text>
+<rect x="680" y="30" width="70" height="56" rx="7" class="s-accsoft k-acc" stroke-width="1.5"/><text x="715.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">slice</text><text x="715.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">384²×3</text>
+<line x1="94" y1="58" x2="115" y2="58" class="k-acc" stroke-width="1.8" marker-end="url(#ga)"/>
+<line x1="205" y1="58" x2="226" y2="58" class="k-acc" stroke-width="1.8" marker-end="url(#ga)"/>
+<line x1="300" y1="58" x2="321" y2="58" class="k-acc" stroke-width="1.8" marker-end="url(#ga)"/>
+<line x1="459" y1="58" x2="480" y2="58" class="k-acc" stroke-width="1.8" marker-end="url(#ga)"/>
+<line x1="546" y1="58" x2="567" y2="58" class="k-acc" stroke-width="1.8" marker-end="url(#ga)"/>
+<line x1="657" y1="58" x2="678" y2="58" class="k-acc" stroke-width="1.8" marker-end="url(#ga)"/>
+<text x="10" y="128" font-size="12" font-weight="600" letter-spacing="1.2" class="s-warn">LABEL PATH · ENTERS ONLY AT THE UNET</text>
+<rect x="10" y="140" width="140" height="48" rx="7" class="s-warnsoft k-warn" stroke-width="1.5"/><text x="80.0" y="161.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">(c, p)</text><text x="80.0" y="178.0" text-anchor="middle" font-size="12" class="s-ink3">category + ROI circles</text>
+<rect x="175" y="140" width="170" height="48" rx="7" class="s-warnsoft k-warn" stroke-width="1.5"/><text x="260.0" y="161.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">render disks 384²</text><text x="260.0" y="178.0" text-anchor="middle" font-size="12" class="s-ink3">pool ×8 → 48²×2 · concat</text>
+<rect x="10" y="204" width="140" height="48" rx="7" class="s-warnsoft k-warn" stroke-width="1.5"/><text x="80.0" y="225.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">c ⊕ s</text><text x="80.0" y="242.0" text-anchor="middle" font-size="12" class="s-ink3">category + cohort</text>
+<rect x="175" y="204" width="170" height="48" rx="7" class="s-warnsoft k-warn" stroke-width="1.5"/><text x="260.0" y="225.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">class embedding</text><text x="260.0" y="242.0" text-anchor="middle" font-size="12" class="s-ink3">added to timestep emb.</text>
+<line x1="150" y1="164" x2="173" y2="164" class="k-warn" stroke-width="1.8" marker-end="url(#gw)"/>
+<line x1="150" y1="228" x2="173" y2="228" class="k-warn" stroke-width="1.8" marker-end="url(#gw)"/>
+<path d="M345 164 H362 V98" class="k-warn" stroke-width="1.8" fill="none" marker-end="url(#gw)"/>
+<path d="M345 228 H432 V98" class="k-warn" stroke-width="1.8" fill="none" marker-end="url(#gw)"/>
+<text x="476" y="128" font-size="13" class="s-ink2">The decoder that paints the pixels</text><text x="476" y="146" font-size="13" class="s-ink2">never receives c or p, so it cannot</text><text x="476" y="164" font-size="13" class="s-ink2">draw a tell-tale mark at the ROI.</text>
+<path d="M715 86 V266" class="k-acc" stroke-width="1.8" fill="none" marker-end="url(#ga)"/>
+<text x="10" y="290" font-size="12" font-weight="600" letter-spacing="1.2" class="s-ink3">SAMPLING</text>
+<text x="10" y="312" font-size="13" class="s-ink2">ROI placements</text><text x="10" y="330" font-size="13" class="s-ink2">drawn from a</text><text x="10" y="348" font-size="13" class="s-ink2">per-category prior,</text><text x="10" y="366" font-size="13" class="s-ink2">then 50 DDIM steps</text><text x="10" y="384" font-size="13" class="s-ink2">with classifier-free</text><text x="10" y="402" font-size="13" class="s-ink2">guidance.</text><clipPath id="gclip"><rect x="150" y="272" width="600" height="200" rx="8"/></clipPath><image href="assets/img/gen-slices.jpg" x="150" y="272" width="600" height="200" clip-path="url(#gclip)"/>
+<text x="450" y="494" text-anchor="middle" font-size="13" class="s-ink3">Generated, not real scans · rings = the ROI disks requested</text></svg></div>
+        <div class="xtext">
+        <span class="tag">Generative models · training data</span>
+        <h3>Generating labelled training data when labels are scarce</h3>
+        <p>A model that places ROIs on diffusion-MRI slices had only a few thousand hand-drawn examples to learn from. Instead of tuning the model again, I tried making more data: a two-stage generator that paints a realistic colour-FA slice around the ROI disks I ask for.</p>
+        <p>The label never reaches the part that paints pixels, so the generator can't cheat by drawing a mark where the ROI is. I then checked that it really puts anatomy where asked, and found a failure no automatic check caught: some samples came out as empty, dark frames, which I only spotted by looking.</p>
+        <p class="status">Paused · the generator works; not yet used for training</p>
+        </div>
+      </article>
+
+      <article class="xcard">
+        <div class="visual"><svg viewBox="0 0 760 590" role="img" aria-label="Three panels. Model: three slices with a marked point pass through a frozen vision encoder and a small projector to become image tokens, which an LLM decoder with LoRA adapters reads along with the question to write the answer one token at a time. Training: the describe-first model writes inferior, midline, vertical and WM-like before the name medulla; the names-only model goes straight to the name. Next: the model writes a SEG token whose hidden state becomes a query that a light decoder combines with frozen volumetry features to output a 3D mask.">
+<defs><marker id="ga" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-acc"/></marker><marker id="gw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-warn"/></marker><marker id="gi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9z" class="s-ink3"/></marker></defs>
+<text x="10" y="16" font-size="12" font-weight="600" letter-spacing="1.2" class="s-acc">1 · MODEL · HOW A VISION-LANGUAGE MODEL READS THE SCAN</text><rect x="10" y="30" width="104" height="56" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="62.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">3 slices</text><text x="62.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">+ marked point</text><line x1="114" y1="58" x2="128" y2="58" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/><rect x="130" y="30" width="118" height="56" rx="7" class="s-bg k-rule" stroke-width="1.5"/><text x="189.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">vision encoder</text><text x="189.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">ViT · frozen</text><line x1="248" y1="58" x2="262" y2="58" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/><rect x="264" y="30" width="98" height="56" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="313.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">projector</text><text x="313.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">small MLP</text><line x1="362" y1="58" x2="376" y2="58" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/><rect x="378" y="50" width="13" height="28" rx="2" class="s-acc" opacity=".75"/><rect x="395" y="50" width="13" height="28" rx="2" class="s-acc" opacity=".75"/><rect x="412" y="50" width="13" height="28" rx="2" class="s-acc" opacity=".75"/><rect x="429" y="50" width="13" height="28" rx="2" class="s-acc" opacity=".75"/><rect x="452" y="50" width="13" height="28" rx="2" class="s-bg k-rule" stroke-width="1.2"/><rect x="469" y="50" width="13" height="28" rx="2" class="s-bg k-rule" stroke-width="1.2"/><rect x="486" y="50" width="13" height="28" rx="2" class="s-bg k-rule" stroke-width="1.2"/><rect x="509" y="50" width="13" height="28" rx="2" class="s-accsoft k-acc" stroke-width="1.2"/><rect x="526" y="50" width="13" height="28" rx="2" class="s-accsoft k-acc" stroke-width="1.2"/><rect x="543" y="50" width="13" height="28" rx="2" class="s-accsoft k-acc" stroke-width="1.2"/><text x="410" y="42" text-anchor="middle" font-size="12" class="s-ink3">image</text><text x="476" y="42" text-anchor="middle" font-size="12" class="s-ink3">question</text><text x="533" y="42" text-anchor="middle" font-size="12" class="s-acc">answer</text><line x1="560" y1="58" x2="576" y2="58" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/><rect x="578" y="30" width="172" height="56" rx="7" class="s-accsoft k-acc" stroke-width="1.5"/><text x="664.0" y="55.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">LLM decoder</text><text x="664.0" y="72.0" text-anchor="middle" font-size="12" class="s-ink3">frozen + LoRA</text><path d="M664.0 86 V108 H533 V82" class="k-acc" stroke-width="1.6" fill="none" marker-end="url(#ga)"/><text x="598.5" y="124" text-anchor="middle" font-size="12.5" class="s-ink3">each new token is appended · loss only on the answer</text>
+<text x="10" y="160" font-size="12" font-weight="600" letter-spacing="1.2" class="s-acc">2 · TRAINING · DESCRIBE FIRST, OR NAMES ONLY?</text>
+<rect x="10" y="210" width="60" height="36" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="40.0" y="233" text-anchor="middle" font-size="14.5" class="s-ink3">scan</text>
+<rect x="76" y="210" width="60" height="36" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="106.0" y="233" text-anchor="middle" font-size="14.5" class="s-ink3">point</text>
+<rect x="142" y="210" width="78" height="36" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="181.0" y="233" text-anchor="middle" font-size="14.5" class="s-ink">inferior</text>
+<rect x="226" y="210" width="72" height="36" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="262.0" y="233" text-anchor="middle" font-size="14.5" class="s-ink">midline</text>
+<rect x="304" y="210" width="76" height="36" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="342.0" y="233" text-anchor="middle" font-size="14.5" class="s-ink">vertical</text>
+<rect x="386" y="210" width="74" height="36" rx="6" class="s-surface k-rule" stroke-width="1.5"/><text x="423.0" y="233" text-anchor="middle" font-size="14.5" class="s-ink">WM-like</text>
+<text x="476" y="233" text-anchor="middle" font-size="14.5" class="s-ink3">→</text><rect x="492" y="210" width="98" height="36" rx="6" class="s-accsoft k-acc" stroke-width="2"/><text x="541" y="233" text-anchor="middle" font-size="14.5" font-weight="600" class="s-acc">medulla</text>
+<path d="M181 208 Q358.5 172 536 206" class="k-acc" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
+<path d="M262 208 Q399.0 184 536 206" class="k-acc" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
+<path d="M342 208 Q439.0 196 536 206" class="k-acc" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
+<path d="M423 208 Q479.5 204 536 206" class="k-acc" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
+<text x="610" y="226" font-size="13" class="s-ink2">the name is</text><text x="610" y="243" font-size="13" class="s-ink2">conditioned on</text><text x="610" y="260" font-size="13" class="s-ink2">the words</text>
+<rect x="10" y="272" width="60" height="36" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="40" y="295" text-anchor="middle" font-size="14.5" class="s-ink3">scan</text><rect x="76" y="272" width="60" height="36" rx="6" class="s-bg k-rule" stroke-width="1.5"/><text x="106" y="295" text-anchor="middle" font-size="14.5" class="s-ink3">point</text><rect x="142" y="272" width="98" height="36" rx="6" class="s-accsoft k-acc" stroke-width="2"/><text x="191" y="295" text-anchor="middle" font-size="14.5" font-weight="600" class="s-acc">medulla</text><text x="252" y="295" font-size="13.5" class="s-ink3">names only: just the pixels to go on</text>
+<text x="10" y="338" font-size="13" class="s-ink2">Trained with SFT → DPO → GRPO; the label maps also score the words the model writes.</text>
+<text x="10" y="380" font-size="12" font-weight="600" letter-spacing="1.2" class="s-warn">3 · NEXT · A [SEG] TOKEN TURNS THE REASONING INTO A MASK</text>
+<rect x="10" y="394" width="118" height="48" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="69.0" y="415.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">3 slices</text><text x="69.0" y="432.0" text-anchor="middle" font-size="12" class="s-ink3">+ point or text</text>
+<rect x="152" y="394" width="128" height="48" rx="7" class="s-accsoft k-acc" stroke-width="1.5"/><text x="216.0" y="415.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">VLM + LoRA</text><text x="216.0" y="432.0" text-anchor="middle" font-size="12" class="s-ink3">reasons in words</text>
+<rect x="304" y="400" width="170" height="36" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="389.0" y="423.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">… → medulla</text>
+<rect x="498" y="400" width="70" height="36" rx="7" class="s-warnsoft k-warn" stroke-width="2"/><text x="533.0" y="423.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">[SEG]</text>
+<rect x="600" y="400" width="110" height="36" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="655.0" y="423.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">MLP → q</text>
+<line x1="128" y1="418" x2="150" y2="418" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/>
+<line x1="280" y1="418" x2="302" y2="418" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/>
+<line x1="474" y1="418" x2="496" y2="418" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/>
+<line x1="568" y1="418" x2="598" y2="418" class="k-warn" stroke-width="1.8" marker-end="url(#gw)"/>
+<rect x="10" y="494" width="118" height="48" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="69.0" y="515.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">T1 volume</text><text x="69.0" y="532.0" text-anchor="middle" font-size="12" class="s-ink3">full 3D</text>
+<rect x="152" y="494" width="150" height="48" rx="7" class="s-bg k-rule" stroke-width="1.5"/><text x="227.0" y="515.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">volumetry encoder</text><text x="227.0" y="532.0" text-anchor="middle" font-size="12" class="s-ink3">frozen · features F</text>
+<rect x="326" y="494" width="170" height="48" rx="7" class="s-warnsoft k-warn" stroke-width="1.5"/><text x="411.0" y="515.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">mask = σ(F · q)</text><text x="411.0" y="532.0" text-anchor="middle" font-size="12" class="s-ink3">light decoder</text>
+<rect x="520" y="494" width="130" height="48" rx="7" class="s-surface k-rule" stroke-width="1.5"/><text x="585.0" y="515.0" text-anchor="middle" font-size="14.5" font-weight="600" class="s-ink">3D mask</text><text x="585.0" y="532.0" text-anchor="middle" font-size="12" class="s-ink3">Dice + BCE</text>
+<line x1="128" y1="518" x2="150" y2="518" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/>
+<line x1="302" y1="518" x2="324" y2="518" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/>
+<line x1="496" y1="518" x2="518" y2="518" class="k-ink3" stroke-width="1.8" marker-end="url(#gi)"/>
+<path d="M655 436 V466 H411 V490" class="k-warn" stroke-width="1.8" fill="none" marker-end="url(#gw)"/>
+<text x="540" y="460" text-anchor="middle" font-size="12.5" class="s-ink3">query q</text>
+<text x="10" y="578" font-size="13" class="s-ink2">The language model decides <tspan font-weight="600" class="s-ink">what</tspan> to segment; the segmentation network decides <tspan font-weight="600" class="s-ink">where</tspan>.</text></svg></div>
+        <div class="xtext">
+        <span class="tag">Vision-language models · post-training</span>
+        <h3>Teaching a model to describe anatomy before naming it</h3>
+        <p>Given a point in a brain MRI, the model first writes what it sees (position, side, shape, signal) and only then names the structure. Every one of those words is computed from label maps, so each step can be checked. The same data then serves as fine-tuning targets, preference pairs, and rewards for reinforcement learning.</p>
+        <p>If the describe-first model can't name structures it never trained on better than a names-only model, the reasoning is decoration. If it can, the next steps are finding a region from a lesion description and reaching a verdict by reasoning.</p>
+        <p class="status live">In progress · data pipeline and baselines done, model training next</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
   <section id="contact">
     <figure class="contact-photo"><img src="assets/img/contact-river.jpg" alt="" width="1200" height="1200" loading="lazy"></figure>
     <div class="contact-text">

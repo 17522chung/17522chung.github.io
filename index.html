@@ -75,9 +75,9 @@
     <div class="section-head"><h2>Experience</h2></div>
     <ul class="list">
       <li>
-        <span class="when">Jun 2025 – now</span>
+        <span class="when">Sep 2025 – now</span>
         <div class="what"><b>AI Research Scientist</b>, <a href="https://airsmed.com/">AIRS Medical</a>
-          <p>Brain DTI, lumbar spine and brain volumetry models: data, labels, architecture, training, evaluation and release.</p></div>
+          <p>Brain DTI, spine MRI and brain volumetry models: data, labels, architecture, training, evaluation and release.</p></div>
       </li>
       <li>
         <span class="when">Jun – Sep 2025</span>
@@ -150,7 +150,7 @@
           <h3>From zero labels to a human-in-the-loop model</h3>
           <p class="hook">Pseudo-labels get a first model running fast, so people correct its predictions instead of drawing from scratch.</p>
           <div class="hint">Hover to read more</div>
-          <div class="more"><div><p>I'm building a lumbar-spine MRI product on my own, starting with deciding which measurements matter clinically. The bottleneck was labels: open datasets only say whether each disc is abnormal. I used <b>several weakly supervised strategies to turn those weak labels into pixel-level training labels</b> (classification → segmentation) <b>with no manual annotation</b>. That is what gets the snowball rolling: once a model proposes plausible masks, an annotator only makes small corrections, and each round of corrections trains the next model. The figure shows candidate labels for one herniated disc. I also built a pseudo-labeling toolkit that my team has since adopted.<span class="credit">Image: public SPIDER lumbar-spine dataset.</span></p></div></div>
+          <div class="more"><div><p>I'm building a spine MRI product on my own, starting with deciding which measurements matter clinically. The bottleneck was labels: open datasets only say whether each disc is abnormal. I used <b>several weakly supervised strategies to turn those weak labels into pixel-level training labels</b> (classification → segmentation) <b>with no manual annotation</b>. That is what gets the snowball rolling: once a model proposes plausible masks, an annotator only makes small corrections, and each round of corrections trains the next model. The figure shows candidate labels for one herniated disc. I also built a pseudo-labeling toolkit that my team has since adopted.<span class="credit">Image: public SPIDER lumbar-spine dataset.</span></p></div></div>
         </div>
       </article>
 
@@ -306,7 +306,7 @@
         <div class="xtext">
         <span class="tag">Generative models · training data</span>
         <h3>Generating labelled training data when labels are scarce</h3>
-        <p>A model that places ROIs on diffusion-MRI slices had only a few thousand hand-drawn examples to learn from. Instead of tuning the model again, I tried making more data: a two-stage generator that paints a realistic colour-FA slice around the ROI disks I ask for.</p>
+        <p>A model that places ROIs on diffusion-MRI slices had only a few hundred hand-drawn examples to learn from. Instead of tuning the model again, I tried making more data: a two-stage generator that paints a realistic colour-FA slice around the ROI disks I ask for.</p>
         <p>The label never reaches the part that paints pixels, so the generator can't cheat by drawing a mark where the ROI is. I then checked that it really puts anatomy where asked, and found a failure no automatic check caught: some samples came out as empty, dark frames, which I only spotted by looking.</p>
         <p class="status">Paused · the generator works; not yet used for training</p>
         </div>
